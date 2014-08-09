@@ -1,0 +1,128 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="Lotto.Viking"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.BackgroundColor="#72c7e7"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Style="{StaticResource GridBackground}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,0,12,0" >
+            <Image Source="/Images/VikingLotto_logo_RGBoghvit1.png" />
+        </StackPanel>
+        <!--ContentPanel - place additional content here-->
+        <Grid Grid.Row="1" x:Name="ContentPanel" Visibility="Collapsed" Margin="12,0,12,0" DataContext="{Binding Vikingrekke}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="2*" />
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Vinnertall" Grid.ColumnSpan="7" VerticalAlignment="Bottom" HorizontalAlignment="Center" 
+                       FontSize="{StaticResource PhoneFontSizeLarge}"/>
+            <Image Grid.Row="1" Grid.Column="0" Source="/Images/ball_red.png" />
+            <Image Grid.Row="1" Grid.Column="1" Source="/Images/ball_red.png" />
+            <Image Grid.Row="1" Grid.Column="2" Source="/Images/ball_red.png" />
+            <Image Grid.Row="1" Grid.Column="3" Source="/Images/ball_red.png" />
+            <Image Grid.Row="1" Grid.Column="4" Source="/Images/ball_red.png" />
+            <Image Grid.Row="1" Grid.Column="5" Source="/Images/ball_red.png" />
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="{Binding Path=Number1, Mode=TwoWay}" 
+                       HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+            <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Path=Number2, Mode=TwoWay}" 
+                       HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+            <TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding Path=Number3, Mode=TwoWay}" 
+                       HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+            <TextBlock Grid.Row="1" Grid.Column="3" Text="{Binding Path=Number4, Mode=TwoWay}" 
+                       HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+            <TextBlock Grid.Row="1" Grid.Column="4" Text="{Binding Path=Number5, Mode=TwoWay}" 
+                       HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+            <TextBlock Grid.Row="1" Grid.Column="5" Text="{Binding Path=Number6, Mode=TwoWay}" 
+                       HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+
+            <TextBlock Text="Lykketall" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" VerticalAlignment="Bottom" 
+                       HorizontalAlignment="Center" FontSize="{StaticResource PhoneFontSizeLarge}" />
+            <TextBlock Text="Tilleggstall" Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="3" VerticalAlignment="Bottom" 
+                       HorizontalAlignment="Right" FontSize="{StaticResource PhoneFontSizeLarge}" />
+            <Image Grid.Row="3" Grid.Column="1" Source="/Images/ball_red.png" />
+            <Image Grid.Row="3" Grid.Column="4" Source="/Images/ball_red.png" />
+            <Image Grid.Row="3" Grid.Column="5" Source="/Images/ball_red.png" />
+            <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding Path=Extra1, Mode=TwoWay}" 
+                       HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+            <TextBlock Grid.Row="3" Grid.Column="4" Text="{Binding Path=Extra2, Mode=TwoWay}" 
+                       HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+            <TextBlock Grid.Row="3" Grid.Column="5" Text="{Binding Path=Extra3, Mode=TwoWay}" 
+                       HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+
+        </Grid>
+
+        <Grid Grid.Row="3" >
+            <Grid DataContext="{Binding Vikingrekke}" Margin="5,0,5,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="4*" />
+                    <RowDefinition Height="7*" />
+                    <RowDefinition Height="10*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.ColumnSpan="5" Text="{Binding Path=Header, Mode=TwoWay}" 
+                           HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Foreground="#cf0a2c"/>
+
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="{Binding Path=Caption7, Mode=TwoWay}" 
+                           HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold" Foreground="#cf0a2c"/>
+                <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Path=Caption6_1, Mode=TwoWay}" 
+                           HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold" Foreground="#cf0a2c"/>
+                <TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding Path=Caption6, Mode=TwoWay}" 
+                           HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold" Foreground="#cf0a2c"/>
+                <TextBlock Grid.Row="1" Grid.Column="3" Text="{Binding Path=Caption5, Mode=TwoWay}" 
+                           HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold" Foreground="#cf0a2c"/>
+                <TextBlock Grid.Row="1" Grid.Column="4" Text="{Binding Path=Caption4_1, Mode=TwoWay}" 
+                           HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold" Foreground="#cf0a2c"/>
+
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="{Binding Path=Joker, Mode=TwoWay}" 
+                           HorizontalAlignment="Center" VerticalAlignment="Top" FontWeight="Bold" Foreground="Black" />
+                <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Path=Prize6_1, Mode=TwoWay}" 
+                           HorizontalAlignment="Center" VerticalAlignment="Top" FontWeight="Bold" Foreground="Black" />
+                <TextBlock Grid.Row="2" Grid.Column="2" Text="{Binding Path=Prize6, Mode=TwoWay}" 
+                           HorizontalAlignment="Center" VerticalAlignment="Top" FontWeight="Bold" Foreground="Black" />
+                <TextBlock Grid.Row="2" Grid.Column="3" Text="{Binding Path=Prize5, Mode=TwoWay}" 
+                           HorizontalAlignment="Center" VerticalAlignment="Top" FontWeight="Bold" Foreground="Black" />
+                <TextBlock Grid.Row="2" Grid.Column="4" Text="{Binding Path=Prize4_1, Mode=TwoWay}" 
+                           HorizontalAlignment="Center" VerticalAlignment="Top" FontWeight="Bold" Foreground="Black" />
+            </Grid>
+        </Grid>
+        <!--<Image Source="/Assets/AlignmentGrid.png" VerticalAlignment="Top" Height="800" Width="480" Margin="0,-32,0,0" Grid.Row="0" Grid.RowSpan="2" IsHitTestVisible="False" />-->
+    </Grid>
+
+</phone:PhoneApplicationPage>

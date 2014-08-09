@@ -100,14 +100,20 @@
     <Compile Include="Lotto.xaml.cs">
       <DependentUpon>Lotto.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Model\LottoRequest.cs" />
+    <Compile Include="Model\TippeRequest.cs" />
     <Compile Include="Model\Lottorekke.cs" />
-    <Compile Include="Model\TallViewModel.cs" />
+    <Compile Include="Model\Vikingrekke.cs" />
+    <Compile Include="ViewModel\LottoViewModel.cs" />
+    <Compile Include="Model\TippeURI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\AppResources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\VikingViewModel.cs" />
+    <Compile Include="Viking.xaml.cs">
+      <DependentUpon>Viking.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -120,6 +126,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Lotto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Viking.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -156,6 +166,10 @@
     <Content Include="Images\ball_red2.png" />
     <Content Include="Images\Lotto_logo_RGB.png" />
     <Content Include="Images\Lotto_logo_RGB_svart.png" />
+    <Content Include="Images\lotto_text.png" />
+    <Content Include="Images\NT_logo_horisontal_RGB.png" />
+    <Content Include="Images\VikingLotto_logo_RGBoghvit1.png" />
+    <Content Include="Images\VikingLotto_text.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\AppResources.resx">

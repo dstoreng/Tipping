@@ -9,9 +9,9 @@ using Newtonsoft.Json;
 
 namespace Lotto.Model
 {
-    public class TallViewModel : INotifyPropertyChanged
+    public class LottoViewModel : INotifyPropertyChanged
     {
-        LottoRequest request;
+        TippeRequest request;
         private Lottorekke _lottorekke;
         public Lottorekke Lottorekke{
             get { return _lottorekke; }
@@ -24,15 +24,15 @@ namespace Lotto.Model
             }
         }
 
-        public TallViewModel()
+        public LottoViewModel()
         {
             Lottorekke = new Lottorekke();
         }
 
         public async Task RetrieveDataAsync()
         {
-            request = new LottoRequest();
-            String jsonString = await request.GetLottoResults();
+            request = new TippeRequest();
+            String jsonString = await request.GetLottoResults(TippeURI.LottoUri());
             dynamic data = JsonConvert.DeserializeObject(jsonString);
             var mainArray = data.mainTable;
             var extraArray = data.addTable;

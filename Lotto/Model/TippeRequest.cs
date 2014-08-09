@@ -8,13 +8,8 @@ using System.IO;
 
 namespace Lotto.Model
 {
-    public class LottoRequest
+    public class TippeRequest
     {
-        String lottoUrl = "https://www.norsk-tipping.no/api-lotto/getResultInfo.json?gameID=1&winnerDetails=true";
-        String vikingUrl = "https://www.norsk-tipping.no/api-vikinglotto/getGameInformation.json";
-        String jokerUrl = "https://www.norsk-tipping.no/api-joker/getGameInformation.json";
-
-
         public String ParseClean(String result)
         {
             int x = result.IndexOf('{');
@@ -23,9 +18,9 @@ namespace Lotto.Model
             return result.Substring(x, (y - x)+1);
         }
 
-        public async Task<String> GetLottoResults()
+        public async Task<String> GetLottoResults(string url)
         {
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(lottoUrl);
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
             string result;
 
             using (var response = (HttpWebResponse)(await Task<WebResponse>.Factory.FromAsync(request.BeginGetResponse, request.EndGetResponse, null)))

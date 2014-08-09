@@ -16,5 +16,15 @@ namespace Lotto
         {
             InitializeComponent();
         }
+
+        private void Lotto_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Lotto.xaml", UriKind.Relative));
+        }
+
+        private void Viking_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Viking.xaml", UriKind.Relative));
+        }
     }
 }

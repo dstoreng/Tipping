@@ -33,6 +33,8 @@ namespace Lotto.Model
         private string _caption5;
         private string _caption4_1;
 
+        private string _joker;
+
         private string _header;
 
 
@@ -226,6 +228,16 @@ namespace Lotto.Model
             {
                 _header = value;
                 OnPropertyChanged("_header");
+            }
+        }
+
+        public string Joker
+        {
+            get { return _joker; }
+            set
+            {
+                _joker = value;
+                OnPropertyChanged("_joker");
             }
         }
 

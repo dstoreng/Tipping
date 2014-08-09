@@ -7,23 +7,20 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
-using Lotto.Resources;
-using Lotto.Model;
-using System.ComponentModel;
-using System.Threading.Tasks;
+using Lotto.ViewModel;
 
 namespace Lotto
 {
-    public partial class Lotto : PhoneApplicationPage
+    public partial class Viking : PhoneApplicationPage
     {
-        LottoViewModel viewModel;
+        VikingViewModel viewModel;
 
         // Constructor
-        public Lotto()
+        public Viking()
         {
             InitializeComponent();
 
-            viewModel = new LottoViewModel();
+            viewModel = new VikingViewModel();
             GetLottoData(); 
         }
 
@@ -47,6 +44,5 @@ namespace Lotto
             SystemTray.ProgressIndicator.IsIndeterminate = value;
             SystemTray.ProgressIndicator.IsVisible = value;
         }
-
     }
 }
