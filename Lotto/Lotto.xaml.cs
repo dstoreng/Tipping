@@ -14,12 +14,12 @@ using System.Threading.Tasks;
 
 namespace Lotto
 {
-    public partial class MainPage : PhoneApplicationPage
+    public partial class Lotto : PhoneApplicationPage
     {
         TallViewModel viewModel;
 
         // Constructor
-        public MainPage()
+        public Lotto()
         {
             InitializeComponent();
 
