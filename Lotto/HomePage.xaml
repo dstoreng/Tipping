@@ -11,12 +11,13 @@
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
-    shell:SystemTray.BackgroundColor="#72c7e7"
+    shell:SystemTray.Opacity="0"
     shell:SystemTray.IsVisible="True">
 
-    <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Style="{StaticResource GridBackground}">
-        <Grid.RowDefinitions>
+        <!--LayoutRoot is the root grid where all page content is placed-->
+        <Grid  Margin="0,30,0,0" >
+            <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="10*"/>
@@ -52,6 +53,11 @@
             <Grid Margin="15,0,15,0" Grid.Row="0" Grid.Column="1">
                 <Image x:Name="Viking" Source="/Images/VikingLotto_text.png" Tap="Viking_Tap" />
             </Grid>
+
+            <Grid Margin="15,0,15,0" Grid.Row="1" Grid.Column="0">
+                <Image x:Name="Joker" Source="/Images/joker_text.png" Tap="Joker_Tap" />
+            </Grid>
+        </Grid>
         </Grid>
     </Grid>
 

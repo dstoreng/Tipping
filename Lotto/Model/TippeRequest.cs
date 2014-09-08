@@ -18,7 +18,7 @@ namespace Lotto.Model
             return result.Substring(x, (y - x)+1);
         }
 
-        public async Task<String> GetLottoResults(string url)
+        public async Task<String> GetResults(string url)
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
             string result;

@@ -96,13 +96,17 @@
     <Compile Include="HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Joker.xaml.cs">
+      <DependentUpon>Joker.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LocalizedStrings.cs" />
     <Compile Include="Lotto.xaml.cs">
       <DependentUpon>Lotto.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\DateParser.cs" />
+    <Compile Include="Model\Jokerrekke.cs" />
     <Compile Include="Model\TippeRequest.cs" />
     <Compile Include="Model\Lottorekke.cs" />
-    <Compile Include="Model\Vikingrekke.cs" />
     <Compile Include="ViewModel\LottoViewModel.cs" />
     <Compile Include="Model\TippeURI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -122,6 +126,10 @@
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
     <Page Include="HomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Joker.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -164,6 +172,8 @@
     <Content Include="Images\background_blue_white.jpg" />
     <Content Include="Images\ball_red.png" />
     <Content Include="Images\ball_red2.png" />
+    <Content Include="Images\Joker_logo_RGB.png" />
+    <Content Include="Images\joker_text.png" />
     <Content Include="Images\Lotto_logo_RGB.png" />
     <Content Include="Images\Lotto_logo_RGB_svart.png" />
     <Content Include="Images\lotto_text.png" />

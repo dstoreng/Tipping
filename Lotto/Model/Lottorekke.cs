@@ -34,7 +34,7 @@ namespace Lotto.Model
         private string _caption4_1;
 
         private string _joker;
-
+        private string _date;
         private string _header;
 
 
@@ -221,6 +221,17 @@ namespace Lotto.Model
                 OnPropertyChanged("_caption4_1");
             }
         }
+
+        public string Date
+        {
+            get { return _date; }
+            set
+            {
+                _date = value;
+                OnPropertyChanged("_date");
+            }
+        }
+
         public string Header
         {
             get { return _header; }

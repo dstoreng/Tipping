@@ -7,24 +7,18 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
-using Lotto.Resources;
 using Lotto.Model;
-using System.ComponentModel;
-using System.Threading.Tasks;
-
 namespace Lotto
 {
-    public partial class Lotto : PhoneApplicationPage
+    public partial class Joker : PhoneApplicationPage
     {
         LottoViewModel viewModel;
-
-        // Constructor
-        public Lotto()
+        public Joker()
         {
             InitializeComponent();
-
             viewModel = new LottoViewModel();
-            GetLottoData(); 
+
+            GetJokerData();
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -34,19 +28,18 @@ namespace Lotto
             SetProgressIndicator(true);
         }
 
-        private async void GetLottoData()
+        private async void GetJokerData()
         {
-            await viewModel.RetrieveLottoDataAsync();
+            await viewModel.RetrieveJokerDataAsync();
             ContentPanel.Visibility = Visibility.Visible;
             this.DataContext = viewModel;
             SetProgressIndicator(false);
         }
 
         private void SetProgressIndicator(bool value)
-        { 
+        {
             SystemTray.ProgressIndicator.IsIndeterminate = value;
             SystemTray.ProgressIndicator.IsVisible = value;
         }
-
     }
 }

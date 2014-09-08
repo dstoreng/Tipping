@@ -33,13 +33,14 @@ namespace Lotto.ViewModel
         public async Task RetrieveDataAsync()
         {
             request = new TippeRequest();
-            String jsonString = await request.GetLottoResults(TippeURI.VikingUri());
+            String jsonString = await request.GetResults(TippeURI.VikingUri());
             dynamic data = JsonConvert.DeserializeObject(jsonString);
             var mainArray = data.mainTable;
             var luckyArray = data.luckyTable;
             var extraArray = data.addTable;
             var prizeArray = data.prizeTable;
             var captionArray = data.prizeCaptionTable;
+            string dateTime = data.drawDate;
 
             Vikingrekke.Number1 = mainArray[0];
             Vikingrekke.Number2 = mainArray[1];
@@ -64,6 +65,7 @@ namespace Lotto.ViewModel
             Vikingrekke.Caption5 = captionArray[3];
             Vikingrekke.Caption4_1 = captionArray[4];
 
+            Vikingrekke.Date = DateParser.ConvertDateTimeToDate(dateTime);
             Vikingrekke.Header = "PREMIEPROGNOSE";
         }
 

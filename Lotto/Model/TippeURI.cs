@@ -15,7 +15,7 @@ namespace Lotto.Model
 
         public static string JokerUri()
         {
-            return "https://www.norsk-tipping.no/api-joker/getGameInformation.json";
+            return "https://www.norsk-tipping.no/api-joker/getResultInfo.json";
         }
 
         public static string VikingUri()
